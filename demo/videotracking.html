@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="http://vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/4.10/video.js"></script>
+		<script src="../../s_code.js"></script>
+	</head>
+	<body>
+		<div>
+			<div style="width:500px;">
+				<div>
+					<video id="video1" class="video-js vjs-default-skin" controls preload="auto" width="440" height="200"  data-tracking='{"omniVideoTracker": {"videoName": "Awesome Movie Title!", "interval" : 25, "player" : "Video.js Player"}}' muted data-setup=''>
+						 <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+						 <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+						 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+					</video>
+				</div>
+				<div>
+					<div>The last tag to fire: <span id="last-tag"></span></div>
+					<div>
+						All tags that have fired.
+						<ul id="all-tags">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="video-tracking.js"></script>
+		<script>
+			videojs('video1', {}, function() {
+				this.omniVideoTracker();
+			});
+		</script>
+	</body>
+</html>
